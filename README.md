@@ -1,1 +1,3 @@
-# ItaloBurguerC4
+# ITALO BURGUER 2021
+
+PARA ACCEDER AL PANEL DE ADMINISTRACION SE INGRESA LA RUTA /admin ->Ejemplo: http://localhost:3000/admin.

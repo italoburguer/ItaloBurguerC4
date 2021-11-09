@@ -1,0 +1,32 @@
+.layout-admin{
+    margin-left: 200px;
+}
+
+.menu-top{
+    display: flex;
+}
+
+.menu-top button {
+    background-color: transparent;
+    color: white;
+}
+
+.menu-top .logout{
+    border: 1px solid rgba(255, 255, 255, 0.247);
+}
+
+.menu-top .logout:hover{
+    background: red;
+    color: #fff;
+}
+
+.menu-top__left .menu-top__logo{
+    width: 90px;
+    padding: 0 10px;
+}
+
+.menu-top__right{
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+}

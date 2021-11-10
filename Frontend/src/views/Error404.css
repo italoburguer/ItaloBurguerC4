@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.containerError404{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    margin-right: 100px;
+}
+
+.containerError404{
+    display: flex;
+    padding: 70px;
+}
+
+.containerError404 .errorText{
+    height: 100%;
+    width: 30%;
+}
+
+.containerError404 .imgError{
+    height: 100%;
+    width: 70%;
+    padding-left: 40%;
+}
+
+.containerError404 .errorText{
+    letter-spacing: 2.5px;
+    font-size: 48px;
+    color: #000;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+#errorText{
+    letter-spacing: 0.4px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 300;
+    margin-top: 50px;
+    line-height: 150%;
+}
+
+#errorText p{
+    line-height: 0%;
+    margin-top: 40px;
+    color: rgb(3, 3, 88);
+}
+
+#errorText button{
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    width: 100px;
+    margin-left: 50px;
+    padding: 3px;
+    border: 1px solid cornflowerblue;
+    color: red;
+    cursor: pointer;
+}
+
+#errorText button:hover{
+    border: 1px solid green;
+    background: #000;
+}

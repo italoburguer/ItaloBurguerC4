@@ -19,7 +19,7 @@ export default function MenuSider(){
                 </Link>
             </Menu.Item>
             <Menu.Item key="2">
-                <Link to={"/admin/menu-web"}>
+                <Link to={"/admin"}>
                 <MenuOutlined />
                 <span className="nav-text">Menu Web</span>
                 </Link>

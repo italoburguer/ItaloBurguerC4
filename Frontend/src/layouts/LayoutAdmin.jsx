@@ -1,16 +1,17 @@
 import React from "react";
 import { Layout } from "antd";
-import { Route, Switch, Redirect} from 'react-router-dom';
+import { Route, Switch, /*Redirect*/} from 'react-router-dom';
 import AppHeader from "../components/admin/appHeader/Appheader";
 import "./css/LayoutAdmin.css";
 import MenuSider from "../components/admin/MenuSider";
-import AdminSignIn from '../views/Admin/Login/SignIn';
+//import AdminSignIn from '../views/Admin/Login/SignIn';
 
 export default function LayoutAdmin(props){
 
     const { routes } = props;
     const {Header, Content, Footer} = Layout;
 
+    /*
     const user = null;
     if(!user){
         return(
@@ -20,7 +21,7 @@ export default function LayoutAdmin(props){
             </>
             )
     }
-
+    */
     return(
         <Layout>
             <MenuSider/>

@@ -8,13 +8,11 @@
 }
 
 h2{
-    color: whitesmoke;
+    color: #000;
+    text-align: center;
 }
-.container{
+.containerSignIn{
     background: #0c0b09;
-}
-
-section{
     padding: 10px;
     height: 100vh;
     width: 100vw;
@@ -57,38 +55,67 @@ section{
     font-size: 26px;
 }
 
+.inputsFormLogin{
+    border-radius: 10px;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 70px;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 1px 1px 5px  #b6c9d4;
+    border: 1px solid rgba(250, 250, 250, 0.836);
+}
+
 .formLogin .titleFormLogin .titleFormLogin-color{
     color: rgb(0, 0, 83);
 }
 
-.inputsFormLogin{
-    color: #fff;
-    padding: 10px;
-    background: darkblue;
-    box-shadow: 1px 1px 5px  #154360;
-    border-radius: 10px;
-    margin: 50px 100px 0px 100px;
+.containerInput{
+    margin-top: 25px;
 }
 
-.inputsFormLogin{
+.containerInput label{
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+}
+
+.containerInput .inputForm{
+    margin-top: 5px;
     text-align: center;
 }
 
-.formLoginInputs{
-    margin-top: 30px;
-}
-
-.formLoginInputs label{
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.inputForm{
-    color: #000;
-    margin-bottom: 15px;
+.containerInput .inputForm input{
+    padding: 8px;
     width: 250px;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid darkblue;
+    border: none;
+    background: rgb(235, 232, 232);
     border-radius: 10px;
 }
+
+.containerInput .inputForm input:hover{
+    background: rgb(197, 195, 195);
+}
+
+.containerButton{
+    width: 170px;
+    margin: 30px auto;
+}
+
+.containerButton button{
+    color: #000;
+    border: 1px solid #37bd64;
+    background: transparent;
+    width: 170px;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.containerButton button:hover{
+    background: green;
+    cursor: pointer;
+    color: white;
+}
+

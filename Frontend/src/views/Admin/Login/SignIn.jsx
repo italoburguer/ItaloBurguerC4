@@ -1,13 +1,13 @@
 import React from "react";
 import "./signIn.css";
 import ImgForm from "../../../assets/img/jpg/imgLogin.jpg";
-import { faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { faHamburger, faEnvelope, faLock, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SignIn(){
     return(
-      <div className="container">
-          <section>
+      <div className="containerSignIn">
+          <section className="SignIn">
           <div className="containerLogin">
               <div className="imgLogin">
               <img className="menu-top__logo"
@@ -22,16 +22,35 @@ export default function SignIn(){
                 <div className="inputsFormLogin">
                     <h2 className="titleInput">INICIA SESIÓN</h2>
                     <form className="formLoginInputs">
-                        <label className="labelForm">Correo electronico</label><br/>
-                        <input type="email" 
-                        name="email"
-                        placeholder="example@example.com"
-                        className="inputForm"/><br/>
-                        <label className="labelForm">Contraseña</label><br/>
-                        <input type="password"
-                        name="password"
-                        placeholder="Ingrese contraseña"
-                        className="inputForm"/>
+                       <div className="containerInput">
+                            <div className="labelInput">
+                                <label>Ingrese su email</label>
+                            </div>
+                            <div className="inputForm">
+                            <FontAwesomeIcon icon={faEnvelope}/>&nbsp;&nbsp;
+                                <input type="email"
+                                name="email"
+                                placeholder="example@example.com"
+                                className="Input"/>
+                            </div>
+                       </div>
+                       <div className="containerInput">
+                            <div className="labelInput">
+                                <label>Ingrese su contraseña</label>
+                            </div>
+                            <div className="inputForm">
+                            <FontAwesomeIcon icon={faLock}/>&nbsp;&nbsp;
+                                <input type="password"
+                                name="password"
+                                placeholder="password"
+                                className="Input"/>
+                            </div>
+                       </div>
+                       <div className="containerButton">
+                           <button type="submit" className="btnForm">
+                               Log In &nbsp;&nbsp;<FontAwesomeIcon icon={faSignInAlt}/>
+                           </button>
+                       </div>
                     </form>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 const bcrypt = require ("bcrypt-nodejs");
 const Admin = require ('../models/admin');
+const jwt = require("../services/jwt");
 
 function signUp(req, res){
     const admin = new Admin();
@@ -48,6 +49,42 @@ function signUp(req, res){
     }
 }
 
+function login(req, res){
+    const params = req.body;
+    const email = params.email.toLowerCase();
+    const password = params.password;
+
+    Admin.findOne({email}, (err, adminStored)=>{
+        if(err){
+            res.status(500).send({message: "Error server"});
+        }else{
+            if(!adminStored){
+                res.status(404).send({
+                    message: "Este email no ha sido registrado"
+                });
+            }else{
+                bcrypt.compare(password, adminStored.password, (err, valid) => {
+                    if(err){
+                        res.status(500).send({
+                            message: "Error server"
+                        });
+                    }else if(!valid){
+                        res.status(404).send({
+                            message: "Contraseña incorrecta"
+                        })
+                    }else{
+                        res.status(200).send({
+                            accessTokenAdmin: jwt.createAccesToken(adminStored),
+                            refreshTokenAdmin: jwt.createRefreshToken(adminStored)
+                        });
+                    }
+                });
+            }
+        }
+    });
+}
+
 module.exports = {
-    signUp
+    signUp,
+    login
 }

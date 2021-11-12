@@ -1,0 +1,10 @@
+.platos-list{
+    padding: 20px;
+}
+
+.plato-list__header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}

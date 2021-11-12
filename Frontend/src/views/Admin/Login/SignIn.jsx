@@ -1,10 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signIn.css";
 import ImgForm from "../../../assets/img/jpg/imgLogin.jpg";
 import { faHamburger, faEnvelope, faLock, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getAccesTokenApi } from '../../../api/auth'
+import {loginApi} from '../../../api/admin';
+import {ACCESS_TOKEN, REFRESH_TOKEN} from '../../../utils/constants';
+import { Redirect } from "react-router";
 
 export default function SignIn(){
+
+
+    const [inputs, setInputs] = useState({
+        email: "",
+        password: ""
+    });
+
+    const changeForm = e =>{
+        setInputs({
+            ...inputs,
+            [e.target.name]: e.target.value
+        });
+    };
+    
+    const login = async e => {
+        e.preventDefault();
+        const result = await loginApi(inputs);
+
+        if(result.message){
+            console.log("Error", result.message);
+        }else{
+           const { accessTokenAdmin, refreshTokenAdmin}  = result;
+           localStorage.setItem(ACCESS_TOKEN, accessTokenAdmin);
+           localStorage.setItem(REFRESH_TOKEN, refreshTokenAdmin); 
+
+           window.location.href = "/admin"
+        }
+    
+    };
+    if(getAccesTokenApi()){
+        return <Redirect to="/admin" />
+    }
+
     return(
       <div className="containerSignIn">
           <section className="SignIn">
@@ -15,13 +52,13 @@ export default function SignIn(){
                     alt=""
                 />
               </div>
-              <div className="formLogin">
+              <div className="formLogin" onSubmit={login}>
                 <div className="title">
                 <label className="titleFormLogin"><span className="titleFormLogin-color">ADMIN&nbsp;</span>ITALO BURGUER&nbsp;&nbsp;<FontAwesomeIcon icon={faHamburger}/></label>
                 </div>
                 <div className="inputsFormLogin">
                     <h2 className="titleInput">INICIA SESIÓN</h2>
-                    <form className="formLoginInputs">
+                    <form className="formLoginInputs" onChange={changeForm}>
                        <div className="containerInput">
                             <div className="labelInput">
                                 <label>Ingrese su email</label>

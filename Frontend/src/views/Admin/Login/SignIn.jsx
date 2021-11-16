@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "./signIn.css";
+import {Descriptions, notification} from "antd";
 import ImgForm from "../../../assets/img/jpg/imgLogin.jpg";
 import { faHamburger, faEnvelope, faLock, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getAccesTokenApi } from '../../../api/auth'
 import {loginApi} from '../../../api/admin';
 import {ACCESS_TOKEN, REFRESH_TOKEN} from '../../../utils/constants';
-import { Redirect } from "react-router";
+import { Redirect, useParams } from "react-router";
 
 export default function SignIn(){
 
-
+    
     const [inputs, setInputs] = useState({
         email: "",
         password: ""
@@ -22,22 +23,28 @@ export default function SignIn(){
             [e.target.name]: e.target.value
         });
     };
-    
-    const login = async e => {
+
+    const login = async e =>{
         e.preventDefault();
+        
         const result = await loginApi(inputs);
 
         if(result.message){
-            console.log("Error", result.message);
+            const authError = result.message;
+            notification.open({
+                type: "error",
+                message: "Error al inicar sesion",
+                description: authError
+            });
         }else{
-           const { accessTokenAdmin, refreshTokenAdmin}  = result;
+           
+           const { accessTokenAdmin, refreshTokenAdmin }  = result;
            localStorage.setItem(ACCESS_TOKEN, accessTokenAdmin);
            localStorage.setItem(REFRESH_TOKEN, refreshTokenAdmin); 
-
            window.location.href = "/admin"
         }
-    
     };
+
     if(getAccesTokenApi()){
         return <Redirect to="/admin" />
     }
@@ -88,6 +95,7 @@ export default function SignIn(){
                                Log In &nbsp;&nbsp;<FontAwesomeIcon icon={faSignInAlt}/>
                            </button>
                        </div>
+                       
                     </form>
                 </div>
               </div>

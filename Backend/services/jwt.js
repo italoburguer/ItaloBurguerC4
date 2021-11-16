@@ -3,11 +3,12 @@ const moment = require("moment");
 
 const SECRET_KEY = "XxX";
 
+//__________________________-ADMIN-____________________//
+
 exports.createAccesToken = function(admin){
     const payload = {
         id: admin._id,
         nombre: admin.nombre,
-        apellido: admin.apellido,
         email: admin.email,
         createToken: moment().unix(),
         exp: moment().add(3, "hours").unix()

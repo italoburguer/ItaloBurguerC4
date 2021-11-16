@@ -1,6 +1,10 @@
 const jwt = require("../services/jwt");
 const moment = require("moment");
 const Admin = require("../models/admin");
+
+
+//________________________ADMIN_____________________//
+
 function checkExpiredToken(token){
     const { exp } = jwt.decodedToken(token);
     const currentDate = moment().unix();
@@ -42,6 +46,7 @@ function refreshAccesToken(req, res){
    }
 }
 
+
 module.exports = {
-    refreshAccesToken
+    refreshAccesToken,
 }

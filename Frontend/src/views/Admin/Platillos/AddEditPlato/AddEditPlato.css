@@ -1,0 +1,19 @@
+.addEditButtonCenter{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.addEditButton{
+    border-radius: 10px;
+    width: 200px;
+    padding: 5px;
+    border: 1px solid green;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.addEditButton:hover{
+    background: green;
+    color: white;
+}

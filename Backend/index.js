@@ -14,10 +14,10 @@ mongoose.connect(`mongodb://${IP_SERVER}:${PORT_DB}/italoBurguer`,
     if(err){
         throw err;
     }else{
-        console.log("CONEXIÓN ESTABLECIDAD CON LA BASE DE DATOS");
+        console.log("CONEXIÓN ESTABLECIDAD CON LA BASE DE DATOS: ITALO BURGUER");
 
         app.listen(port, () =>{
-            console.log("Server is running on port-> "+port);
+            console.log("Server is running on port-> " +port);
             console.log(`http://${IP_SERVER}:${port}/api/${API_VERSION}/`);
         });
     }

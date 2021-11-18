@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {List, Button, Modal as Modalantd, notification} from "antd"
 import DragSortableList from "react-drag-sortable";
 import  Modal  from "../../../../components/admin/Modal/";
-import { getPlatoApi, deletePlatoApi } from "../../../../api/plato";
+import { getPlatoApi, deletePlatoApi, updatePlatoApi } from "../../../../api/plato";
 import { faEdit, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getAccesTokenApi } from "../../../../api/auth";
@@ -32,6 +32,14 @@ export default function PlatoList(props){
     }, [plato]);
 
     const onSort = (sortedList, dropEvent) => {
+      const accesToken = getAccesTokenApi();
+
+      sortedList.forEach(item =>{
+        const { _id } = item.content.props.plato;
+        const order = item.rank;
+        updatePlatoApi(accesToken, _id, {order});
+      });
+
     };
 
     const addPlatoModal = () =>{

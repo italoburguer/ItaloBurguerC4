@@ -5,8 +5,8 @@ const PlatoSchema = Schema({
     nombre: {type: String, require},
     precio: {type: Number, require},
     imagen: {type: String},
-    categoria: {type: String},
-    descripcion: {type: String}
+    descripcion: {type: String},
+    order: {type: Number}
 });
 
 module.exports = mongoose.model("Plato", PlatoSchema);

@@ -3,7 +3,7 @@ const Plato = require("../models/plato");
 function createPlato(req, res){
    const body = req.body;
    const plato = new Plato(body);
-   plato.order = 1;
+   plato.order = 1000;
 
    plato.save((err, platoStored) => {
        if(err){

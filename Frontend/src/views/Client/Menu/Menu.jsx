@@ -28,7 +28,6 @@ export default function Menu(){
     return(
         <div className="menu__food">
             <PresentacionPlatillos />
-
             {!platos ? (
                 <Spin tip="CARGANDO CARTA DE PLATILLOS : )"
                  style={{textAlign:"center",  width: "100%", padding: "20px" }}

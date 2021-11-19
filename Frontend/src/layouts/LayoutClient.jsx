@@ -13,13 +13,9 @@ export default function LayoutClient(props){
     return(
         <Layout>
             <Layout>
-                <HeaderClient />
                 <section className="sectionClient">
                     <LoadRoutes routes={routes} />
                 </section>
-                <Footer>
-                    <p>ITALO BURGUER 2021</p>
-                </Footer>
             </Layout>
         </Layout>
     );

@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from "react";
 import PresentacionPlatillos from "../../../components/client/appPlatillos/cartaPresentacion/PresentacionPlatillos";
-import ListPlatillos from "../../../components/client/appPlatillos/appListPlatillos/ListPlatillos";
+import ListPlatillos from "../../../components/client/appPlatillos/appListPlatillos/listPlatillos";
 import { getPlatoApi } from "../../../api/plato";
 import {notification, Spin} from "antd";
 
-import "./Menu.css";
+import "./menu.css";
 
 export default function Menu(){
     const [ platos, setPlatos ] = useState(null);

@@ -161,6 +161,7 @@ function Plato(props){
           <img
             src={plato.imagen}
             style={{ 
+                imageRendering: "pixelated",
                 borderRadius: "20px",
                 width: "100px", 
                 marginRight: "20px",

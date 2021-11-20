@@ -7,21 +7,23 @@
     font-family: 'Oswald', sans-serif ;
 }
 
-h2{
+.titleInput{
     color: #000;
-    text-align: center;
+    text-align: center !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 22px !important;
 }
 .containerSignIn{
     background: #0c0b09;
     padding: 10px;
     height: 100vh;
     width: 100vw;
-    font-family: 'Oswald', sans-serif ;
 }
 
 .containerLogin{
     height: 100%;
     display: flex;
+    font-family: 'Oswald', sans-serif !important;
 }
 
 .containerLogin .imgLogin{

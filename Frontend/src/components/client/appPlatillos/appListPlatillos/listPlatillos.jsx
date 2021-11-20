@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
-import {Rate, notification, Card, Col} from "antd"
-import {getPlatoApi} from "../../../../api/plato"
+import { notification} from "antd"
+import {getPlatoApi} from "../../../../api/plato";
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./listPlatillos.css";
 
 export default function ListPlatillos(props){
 
     const {platos } = props;
-    const {Meta} = Card;
     return(
         <div className="platos-list">
             {platos.map(plato =>(
@@ -41,14 +43,20 @@ function Plato(props){
 
     return (
         <div className="container__platillos">
-            <Card
-                cover={<img src={plato.imagen} style={{width:"300px",height:"300px"}}/>}
-            >
-            <Card.Meta 
-             title={plato.nombre}
-
-             />
-            </Card>
+            <div className="ProductItem">
+                <div className="productItemAlign">
+                <img src={plato.imagen}
+                /> 
+                <div className="titleProduct">
+                    {plato.nombre} 
+                </div>
+                <div className="precioProduct">
+                    <div>COP $/ {plato.precio}</div>
+                    <div className="buttonBuyItem"><button><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>
+                </div>
+                </div>
+            </div>
         </div>
+        
     )
 }

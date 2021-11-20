@@ -1,8 +1,58 @@
 .container__platillos{
-    background: black;
-    color: #fff;
+    margin-left: 20px;
 }
 
-.title__platillo{
-    background: red;
+.productItemAlign img{
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    image-rendering: pixelated;
+}
+
+.productItemAlign{
+    margin-top: 20px;
+    margin-right: 25px;
+    width: 200px;
+    height: 300px;
+    color: #000;
+    display: grid;
+    float: left;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: honeydew;
+    box-shadow: 1px 1px 1px 1px rgba(129, 0, 0, 0.603);
+    border: 2px solid orange;
+}
+
+.titleProduct{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.precioProduct{
+    margin: 0 auto;
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.buttonBuyItem{
+    margin-left: 15px;
+}
+
+.buttonBuyItem button{
+    font-weight: 300;
+    border: 1px solid green;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.buttonBuyItem button:hover{
+    background: green;
+    border: 1px solid gainsboro;
+    color: white;
 }

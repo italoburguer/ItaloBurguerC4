@@ -1,11 +1,32 @@
-.menu__food{
-    border: 1px solid black;
-    margin: 10px 30px;
-    margin-top: 100px;
-    padding: 5px 20px;
-    text-align: center;
+.Menu__food__container{
+    background-image: url(../../../assets/img/jpg/Background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.Menu__food__container{
+.menu__food{
+    display: flex;
+    padding-bottom: 20px;
+}
 
+.introduccionPlatillos{
+    margin-left: 30px;
+    text-align: center;
+    width: 75%;
+}
+
+.PanelCompra{
+    box-sizing: border-box;
+    width: 25%;
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid darkblue;
+    text-align: center;
+    height: auto;
+    top: 0;
+    right: 0;
 }

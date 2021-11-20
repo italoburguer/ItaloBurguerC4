@@ -29,17 +29,21 @@ export default function Menu(){
     return(
         <div className="Menu__food__container">
           <HeaderClient />  
-        <div className="menu__food">
-            <PresentacionPlatillos />
-            {!platos ? (
+            <div className="menu__food">
+                <div className="introduccionPlatillos">
+                     <PresentacionPlatillos />
+                     {!platos ? (
                 <Spin tip="CARGANDO CARTA DE PLATILLOS : )"
                  style={{textAlign:"center",  width: "100%", padding: "20px" }}
                  />
             ) : (
                 <ListPlatillos platos={platos} />
             )}
-            
-        </div>
+                </div>
+                <div className="PanelCompra">
+                Panel Compra ITEMSSS
+                </div>
+            </div>
         </div>
     );
 }

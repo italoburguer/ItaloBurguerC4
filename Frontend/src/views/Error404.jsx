@@ -2,10 +2,10 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import "./Error404.css"
 import e404 from "../assets/img/png/404.png";
-
 export default function Error404(){
     return(
-            <div className="containerError404">
+            <section id="err404">
+                <div className="containerError404">
                 <div className="errorText">
                     Page
                     <div>
@@ -27,5 +27,6 @@ export default function Error404(){
                     alt="ERROR 404 IMG" />
                 </div>
             </div>
+            </section>
     )
 }

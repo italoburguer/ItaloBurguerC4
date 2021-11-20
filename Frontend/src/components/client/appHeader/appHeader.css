@@ -1,17 +1,19 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-header{
-    text-align: center;
-    padding-top: 10px;
-    background: #000;
-    width: 100vw;
+.navbar-default{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    background-color: #fff;
     height: 80px;
 }
 
-header h1{
-    color: #fff;
+.logoHeader{
+    margin-left: 40px;
+    font-size: 35px;
+    letter-spacing: 4px;
 }

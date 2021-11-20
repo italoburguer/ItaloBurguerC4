@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "antd";
 import { Route, Switch} from 'react-router-dom';
-import HeaderClient from "../components/client/appHeader/appHeader"
+import FooterClient from "../components/client/appFooter/Footer";
 
 import "../layouts/css/LayoutClient.css";
 
@@ -12,11 +12,13 @@ export default function LayoutClient(props){
 
     return(
         <Layout>
+            
             <Layout>
                 <section className="sectionClient">
                     <LoadRoutes routes={routes} />
                 </section>
             </Layout>
+            <FooterClient />
         </Layout>
     );
 }

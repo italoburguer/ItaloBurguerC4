@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif ;
 }
 
 h2{
@@ -16,6 +16,7 @@ h2{
     padding: 10px;
     height: 100vh;
     width: 100vw;
+    font-family: 'Oswald', sans-serif ;
 }
 
 .containerLogin{
@@ -28,7 +29,8 @@ h2{
 }
 
 .containerLogin .imgLogin img{
-    width: 930px;
+    max-width: none;
+    width: 930px !important; 
     border: 1px solid rgba(250, 250, 250, 0.836);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;

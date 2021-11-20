@@ -3,6 +3,7 @@ import PresentacionPlatillos from "../../../components/client/appPlatillos/carta
 import ListPlatillos from "../../../components/client/appPlatillos/appListPlatillos/listPlatillos";
 import { getPlatoApi } from "../../../api/plato";
 import {notification, Spin} from "antd";
+import HeaderClient from "../../../components/client/appHeader/appHeader";
 
 import "./menu.css";
 
@@ -26,6 +27,8 @@ export default function Menu(){
     }, []);
 
     return(
+        <div className="Menu__food__container">
+          <HeaderClient />  
         <div className="menu__food">
             <PresentacionPlatillos />
             {!platos ? (
@@ -36,6 +39,7 @@ export default function Menu(){
                 <ListPlatillos platos={platos} />
             )}
             
+        </div>
         </div>
     );
 }

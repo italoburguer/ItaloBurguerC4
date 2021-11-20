@@ -7,7 +7,9 @@ Author URI: http://bootstrapthemes.co
    Author's custom styles
    ========================================================================== */
 
-
+   body{
+	overflow-x: hidden;
+ }
 
 body {
 	color: #767676;
@@ -474,9 +476,8 @@ a:hover{
 
 /* footer section */
 .footer{
-	background:url(../images/footerbg.jpg) no-repeat center top;
+	background: #121212;
 	background-size:cover;
-	padding-top:80px;
 }
 
 .copyright_text_area{

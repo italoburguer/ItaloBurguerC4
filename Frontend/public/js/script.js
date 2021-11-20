@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
 	
 	$(window).load(function () {
 		$(".loaded").fadeOut();
-		$(".preloader").delay(1000).fadeOut("slow");
+		$(".preloader").delay(0).fadeOut("slow");
 	});
 	jQuery(window).scroll(function () {
 	  var top = jQuery(document).scrollTop();

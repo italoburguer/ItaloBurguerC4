@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
-import {Rate, notification, Row, Col} from "antd"
+import {Rate, notification, Card, Col} from "antd"
 import {getPlatoApi} from "../../../../api/plato"
+import "./listPlatillos.css";
 
 export default function ListPlatillos(props){
 
     const {platos } = props;
-
+    const {Meta} = Card;
     return(
         <div className="platos-list">
             {platos.map(plato =>(
@@ -24,12 +25,30 @@ function Plato(props){
 
     useEffect(() =>{
         getPlatoApi(plato._id).then(response =>{
-            console.log(response)
+           if(response?.code !== 200){
+               notification["warning"]({
+                   message: response.message
+               });
+           }else{
+               setPlatoInfo(response.plato);
+           }
         }).catch(() => {
             notification["error"]({
-                message: "Error Internal Server"
+                message: "Error Internal Server Try Again"
             });
         });
-    });
-    return <p>Hola</p>
+    }, [plato]);
+
+    return (
+        <div className="container__platillos">
+            <Card
+                cover={<img src={plato.imagen} style={{width:"300px",height:"300px"}}/>}
+            >
+            <Card.Meta 
+             title={plato.nombre}
+
+             />
+            </Card>
+        </div>
+    )
 }

@@ -13,8 +13,8 @@ export default function AddEditPlato(props){
     const [platoData, setPlatoData] = useState({});
 
     useEffect(()=>{
-        plato && setPlatoData(plato);
-    }, [plato])
+        plato ? setPlatoData(plato) : setPlatoData({});
+    }, [plato]);
 
     const addPlato = e =>{
         e.preventDefault();

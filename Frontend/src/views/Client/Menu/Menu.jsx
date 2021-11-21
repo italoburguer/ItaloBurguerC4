@@ -37,11 +37,13 @@ export default function Menu(){
                  style={{textAlign:"center",  width: "100%", padding: "20px" }}
                  />
             ) : (
-                <ListPlatillos platos={platos} />
+                <div className="container__platillos__menu">
+                    <ListPlatillos platos={platos} />
+                </div>
             )}
                 </div>
                 <div className="PanelCompra">
-                Panel Compra ITEMSSS
+                 
                 </div>
             </div>
         </div>

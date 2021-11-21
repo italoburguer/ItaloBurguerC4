@@ -3,23 +3,23 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import routes from "./config/routes";
 import AuthProviderAdmin from "./provider/AuthProviderAdmin";
 
+
 function App() {
+
   return (
-     <div>
-  
+  <div>
    <AuthProviderAdmin>
-    <Router>
-      <Switch>
+      <Router>
+        <Switch>
         {routes.map((route, index) => (
           <RouteWithSubRoutes key={index} {...route} />
         ))}
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
    </AuthProviderAdmin>
-
-   </div>
-  
+  </div>
   );
+
 }
 
 function RouteWithSubRoutes(route){

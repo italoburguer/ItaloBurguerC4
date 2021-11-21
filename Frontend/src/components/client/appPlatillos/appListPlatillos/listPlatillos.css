@@ -1,3 +1,6 @@
+.Menu__food__containe{
+    overflow-y: scroll;
+}
 .container__platillos{
     margin-left: 20px;
 }

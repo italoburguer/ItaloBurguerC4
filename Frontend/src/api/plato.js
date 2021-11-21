@@ -1,4 +1,3 @@
-
 import {basePath, apiVersion} from "./config"
 
 export async function getPlatoApi(){

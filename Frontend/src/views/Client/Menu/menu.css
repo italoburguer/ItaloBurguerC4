@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    image-rendering: pixelated;
 }
 
 .menu__food{
@@ -18,7 +19,8 @@
 
 .PanelCompra{
     box-sizing: border-box;
-    width: 25%;
+    width: 21%;
+    height: 55%;
     margin-top: 100px;
     margin-left: 10px;
     margin-right: 10px;
@@ -26,7 +28,9 @@
     border-radius: 20px;
     border: 1px solid darkblue;
     text-align: center;
-    height: auto;
     top: 0;
     right: 0;
+    position: fixed;
+    overflow: auto;
+    z-index: 2;
 }

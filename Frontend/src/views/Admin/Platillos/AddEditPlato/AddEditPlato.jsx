@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Form, Input, Button, notification} from "antd";
+import {Form, Input, Button, Modal, notification} from "antd";
 import {getAccesTokenApi} from "../../../../api/auth"
 import { faUtensils, faDollarSign, faInfoCircle, faImage, faKey} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +8,7 @@ import { addPlatoApi, updatePlatoApi } from "../../../../api/plato"
 import "./AddEditPlato.css";
 
 export default function AddEditPlato(props){
+
 
     const { setIsVisibleModal, setReloadPlato, plato} = props;
     const [platoData, setPlatoData] = useState({});

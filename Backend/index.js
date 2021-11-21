@@ -6,7 +6,7 @@ const cors = require("cors");
 
 //mongoose.set("useFindAndModify", false);
 
-app.use(cors());
+
 
 mongoose.connect(`mongodb+srv://root:toor@cluster0.1ae14.mongodb.net/cluster0?retryWrites=true&w=majority`,
 {useNewUrlParser: true, useUnifiedTopology: true }, 

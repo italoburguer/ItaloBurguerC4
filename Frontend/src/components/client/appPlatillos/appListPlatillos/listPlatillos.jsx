@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { notification} from "antd"
+import { notification} from "antd";
 import {getPlatoApi} from "../../../../api/plato";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./listPlatillos.css";
+
 
 export default function ListPlatillos(props){
 

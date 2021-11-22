@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import routes from "./config/routes";
 import AuthProviderAdmin from "./provider/AuthProviderAdmin";
 
-
 function App() {
 
   return (

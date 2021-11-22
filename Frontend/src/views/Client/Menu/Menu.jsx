@@ -41,10 +41,12 @@ export default function Menu(){
                     <ListPlatillos platos={platos} />
                 </div>
             )}
-                </div>
+                </div>{
+                    /*
                 <div className="PanelCompra">
                  
-                </div>
+                </div> */
+                }
             </div>
         </div>
     );

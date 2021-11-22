@@ -1,5 +1,6 @@
 const express = require ('express');
 const bodyParser = require("body-parser");
+const cors = require('cors')
 
 const app = express();
 const { API_VERSION } = require('./config');
@@ -16,10 +17,12 @@ app.all("*", (req, res, next) => {
     );
     res.setHeader(
       "Acces-Control-Allow-Methods",
-      "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+      "GET, POST, PUT, HEAD, PATCH, DELETE, OPTIONS"
     );
     next();
-  });
+});
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

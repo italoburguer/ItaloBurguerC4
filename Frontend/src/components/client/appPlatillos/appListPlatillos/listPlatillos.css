@@ -6,16 +6,19 @@
 }
 
 .productItemAlign img{
-    width: 200px;
+    width: 300px;
     height: 200px;
     border-radius: 12px;
     image-rendering: pixelated;
 }
 
+.ProductItem{
+}
+
 .productItemAlign{
     margin-top: 20px;
-    margin-right: 25px;
-    width: 200px;
+    margin: 20px 50px;
+    width: 300px;
     height: 300px;
     color: #000;
     display: grid;
@@ -30,7 +33,7 @@
 }
 
 .titleProduct{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
 }
 

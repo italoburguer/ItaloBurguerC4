@@ -42,8 +42,16 @@ function Plato(props){
         });
     }, [plato]);
 
+    const n = true;
+    let pagar =0;
+    let total=0;
+    function buyItem(){
+
+    
+    }
     return (
         <div className="container__platillos">
+            
             <div className="ProductItem">
                 <div className="productItemAlign">
                 <img src={plato.imagen}
@@ -53,9 +61,10 @@ function Plato(props){
                 </div>
                 <div className="precioProduct">
                     <div>COP $/ {plato.precio}</div>
-                    <div className="buttonBuyItem"><button><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>
+                    <div className="buttonBuyItem"><button onClick={buyItem}><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>
                 </div>
                 </div>
+                <buyItem />
             </div>
         </div>
         

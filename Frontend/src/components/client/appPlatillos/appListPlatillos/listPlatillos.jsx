@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react";
-import { notification} from "antd";
+import { notification, Rate} from "antd"
 import {getPlatoApi} from "../../../../api/plato";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./listPlatillos.css";
-
 
 export default function ListPlatillos(props){
 
@@ -42,29 +41,28 @@ function Plato(props){
         });
     }, [plato]);
 
-    const n = true;
-    let pagar =0;
-    let total=0;
-    function buyItem(){
-
-    
-    }
     return (
         <div className="container__platillos">
-            
             <div className="ProductItem">
                 <div className="productItemAlign">
-                <img src={plato.imagen}
-                /> 
-                <div className="titleProduct">
-                    {plato.nombre} 
+                    <div className="imagePlato">
+                    <img src={plato.imagen} alt="ImagenPLatillo"/> 
+                    </div>
+                    <div className="infoPlato">
+                        <div className="titleProduct">{plato.nombre} </div>
+                        <div className="ratePlatillo">
+                            <Rate disabled defaultValue={4} style={{ fontSize:"16px", color:"orange", }}/>
+                            <div className="rateText" style={{fontStyle:"oblique"}}>8 calificaciones</div>
+                        </div>
+                        <div className="descriptionPlatillo">
+                            {plato.descripcion}
+                        </div>
+                        <div className="precioProduct">
+                            <div>COP $/ {plato.precio}</div>
+                            <div className="buttonBuyItem"><button><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>
+                         </div>
+                    </div>
                 </div>
-                <div className="precioProduct">
-                    <div>COP $/ {plato.precio}</div>
-                    <div className="buttonBuyItem"><button onClick={buyItem}><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>
-                </div>
-                </div>
-                <buyItem />
             </div>
         </div>
         

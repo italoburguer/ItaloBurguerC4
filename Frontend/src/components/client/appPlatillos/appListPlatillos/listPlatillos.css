@@ -1,47 +1,75 @@
-.Menu__food__containe{
-    overflow-y: scroll;
-}
+
 .container__platillos{
     margin-left: 20px;
 }
 
 .productItemAlign img{
-    width: 300px;
-    height: 200px;
-    border-radius: 12px;
+    width: 200px;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     image-rendering: pixelated;
 }
 
-.ProductItem{
+.ratePlatillo{
+    width: 100%;
+    padding-left: 30px;
+}
+
+.ratePlatillo .rateText{
+    color: gray;
 }
 
 .productItemAlign{
     margin-top: 20px;
     margin: 20px 50px;
-    width: 700px;
-    height: 300px;
+    width: 500px;
+    height: 200px;
     color: #000;
-    display: grid;
+    display: flex;
     float: left;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
     background: honeydew;
     box-shadow: 1px 1px 1px 1px rgba(129, 0, 0, 0.603);
     border: 2px solid orange;
 }
 
+.infoPlato{
+    width: 300px;
+    border-left: 2px solid whitesmoke;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: left;
+    background-color: rgb(10, 25, 41);
+}
+
 .titleProduct{
-    font-size: 16px;
+    margin-top: 3px;
+    color: #fff;
+    font-size: 20px;
     font-weight: 400;
+    padding-left: 30px;
+    
+}
+
+.descriptionPlatillo{
+    color: rgba(255, 255, 255, 0.712);
+    padding-left: 30px;
+    padding-right: 20px;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 5px;
 }
 
 .precioProduct{
-    margin: 0 auto;
     display: flex;
     font-size: 16px;
     font-weight: 300;
+    padding-left: 30px;
+    color: #fff;
 }
 
 .buttonBuyItem{
@@ -50,11 +78,13 @@
 
 .buttonBuyItem button{
     font-weight: 300;
+    margin-left: 15px;
     border: 1px solid green;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
+    background-color: rgb(0, 9, 19);
 }
 
 .buttonBuyItem button:hover{

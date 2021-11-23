@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from "react";
 import { notification, Rate} from "antd"
 import {getPlatoApi} from "../../../../api/plato";
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./listPlatillos.css";
 
 export default function ListPlatillos(props){
-
-    const {platos } = props;
+    const {count, setCount} = props;
+    const {platos, } = props;
     return(
         <div className="platos-list">
             {platos.map(plato =>(
                 <div key={plato._id} className="platos-list__render">
-                    <Plato  plato={plato}/>
+                    <Plato  plato={plato} count={count} setCount={setCount}/>
                 </div>
             ))}
         </div>
@@ -22,6 +22,7 @@ export default function ListPlatillos(props){
 }
 
 function Plato(props){
+    const {count, setCount} = props;
     const {plato} = props;
     const [platoInfo, setPlatoInfo] = useState({});
 
@@ -60,10 +61,9 @@ function Plato(props){
                             {plato.descripcion}
                         </div>
                         <div className="precioProduct">
-                            <div>COP $/ <span style={{fontWeight:"bolder", letterSpacing: "0.5px"}}>{plato.precio}</span></div>
-                            <div className="buttonBuyItem"><button><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>   
-                                             
-                        </div>
+                            <div>COP $/ {plato.precio}</div>
+                            <div className="buttonBuyItem"><button onClick={()=>setCount(count+1)}><FontAwesomeIcon icon={faCartPlus} /> &nbsp;Añadir al carrito</button></div>
+                         </div>
                     </div>
                 </div>
             </div>

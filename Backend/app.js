@@ -1,6 +1,6 @@
 const express = require ('express');
 const bodyParser = require("body-parser");
-
+const cors = require("cors")
 const app = express();
 const { API_VERSION } = require('./config');
 
@@ -23,7 +23,7 @@ app.all("*", (req, res, next) => {
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
+app.use(cors())
 app.use(`/api/${API_VERSION}`, platoRoutes);
 app.use(`/api/${API_VERSION}`, authRoutes);
 app.use(`/api/${API_VERSION}`, adminRoutes);

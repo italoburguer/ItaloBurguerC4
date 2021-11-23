@@ -46,7 +46,7 @@ export default function Home(){
 				<div class="main_banner_area text-center">
 					<div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7">
 						<div class="single_banner_text wow zoomIn" data-wow-duration="1s">
-							<p>Veggies es bonus vobis, proinde vos postulo essum.</p>
+							<p>Las Mejores Hamburguesas, todas a tu orden.</p>
 							
 							<div class="separetor"></div>
 						</div>
@@ -63,7 +63,7 @@ export default function Home(){
 		</div>
 	</section>
 	
-	<section id="features" class="features sections">
+	{/* <section id="features" class="features sections">
 		<div class="container">
 			<div class="row">
 				<div class="features_content text-center">
@@ -91,9 +91,9 @@ export default function Home(){
 				</div>
 			</div>
 		</div>
-	</section>	
+	</section>	 */}
 	
-	<section id="special" class="special sections">
+	{/* <section id="special" class="special sections">
 		<div class="container">
 			<div class="row">
 				<div class="head_title text-center wow slideInLeft" data-wow-duration="1.5s">
@@ -238,7 +238,7 @@ export default function Home(){
 			</div>
 		</div>
 	</section>
-	
+	 */}
 	<section id="abouts" class="abouts sections">
 		<div class="container">
 			<div class="row">
@@ -248,9 +248,8 @@ export default function Home(){
 							<div class="head_title text-center">
 								<h2>About us</h2>
 								<div class="separetor"></div>
-							</div>
-							
-							<p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+							</div>							
+							<p>Somos una pequeña familia, cultivamos de manera artesanal gran parte de nuestros productos, sin químicos ni conservantes, nuestro pan esta hecho con sémola de trigo de gran aceptación.</p>
 							<div class="signature_img text-right">
 								<img src="images/signature.png" alt="" />
 							</div>
@@ -259,7 +258,7 @@ export default function Home(){
 					
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="single_abouts wow slideInRight" data-wow-duration="2s">
-							<img src="images/abimg.png" alt="" />
+							<img src="images/abimg.png" alt="Foto de nuestro fundador" class="italo"/>
 						</div>
 					</div>
 				</div>

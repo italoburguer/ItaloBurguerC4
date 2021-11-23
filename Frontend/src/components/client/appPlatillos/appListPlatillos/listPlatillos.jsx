@@ -8,7 +8,7 @@ import "./listPlatillos.css";
 
 export default function ListPlatillos(props){
     const {count, setCount} = props;
-    const {platos } = props;
+    const {platos, } = props;
     return(
         <div className="platos-list">
             {platos.map(plato =>(

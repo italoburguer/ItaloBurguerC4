@@ -41,6 +41,8 @@ function Plato(props){
         });
     }, [plato]);
 
+    let item=[plato];
+
     return (
         <div className="container__platillos">
             <div className="ProductItem">
@@ -58,9 +60,10 @@ function Plato(props){
                             {plato.descripcion}
                         </div>
                         <div className="precioProduct">
-                            <div>COP $/ {plato.precio}</div>
-                            <div className="buttonBuyItem"><button><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>
-                         </div>
+                            <div>COP $/ <span style={{fontWeight:"bolder", letterSpacing: "0.5px"}}>{plato.precio}</span></div>
+                            <div className="buttonBuyItem"><button><FontAwesomeIcon icon={faShoppingCart} /> &nbsp;Comprar</button></div>   
+                                             
+                        </div>
                     </div>
                 </div>
             </div>

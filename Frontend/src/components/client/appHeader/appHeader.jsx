@@ -1,10 +1,12 @@
-import React from "react";
-import { faHamburger} from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import { faHamburger, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./appHeader.css"
+import "./appHeader.css";
 
-export default function appHeader(){
+export default function appHeader(props){
+
+   const {count} = props;
 
     let active="";
     let active2="";
@@ -33,10 +35,10 @@ export default function appHeader(){
 			  
 			  <ul class="nav navbar-nav navbar-right">
 				<li><a href="/">Home</a></li>
-				<li class={active} ><a href="/menu">MENU</a></li>
-				<li class={active2} ><a href="/pedidos">MIS PEDIDOS</a></li>
-				<li class={active3} ><a href="/login">INICIAR SESIÓN</a></li>
-				
+				<li className={active} ><a href="/menu">MENU</a></li>
+				<li className={active2} ><a href="/pedidos">MIS PEDIDOS</a></li>
+				<li className={active3} ><a href="/login">INICIAR SESIÓN</a></li>
+        <li className="iconCart" style={{border:"1px solid green", borderRadius:"5px", padding:"5px",background:"darkblue",color:"#fff"}}><FontAwesomeIcon icon={faShoppingCart}/> <span style={{borderRadius:"5px", top:"0"}}>{count}</span></li>
 			  </ul>
 			</div>
 		  </div>

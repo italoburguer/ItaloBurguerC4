@@ -9,6 +9,7 @@ import "./menu.css";
 
 export default function Menu(){
     const [ platos, setPlatos ] = useState(null);
+    const [ count, setCount ] = useState(0);
 
     useEffect(() => {
         getPlatoApi().then(response =>{
@@ -26,9 +27,10 @@ export default function Menu(){
         });
     }, []);
 
+
     return(
         <div className="Menu__food__container">
-          <HeaderClient />  
+          <HeaderClient count={count}/>  
             <div className="menu__food">
                 <div className="introduccionPlatillos">
                      <PresentacionPlatillos />
@@ -38,7 +40,7 @@ export default function Menu(){
                  />
             ) : (
                 <div className="container__platillos__menu">
-                    <ListPlatillos platos={platos} />
+                    <ListPlatillos platos={platos} count={count} setCount={setCount}/>
                 </div>
             )}
                 </div>{

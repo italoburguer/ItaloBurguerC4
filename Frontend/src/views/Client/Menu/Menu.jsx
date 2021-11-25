@@ -11,6 +11,34 @@ export default function Menu(){
     const [ platos, setPlatos ] = useState(null);
     const [ count, setCount ] = useState(0);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+    
+    const itemPrice = cartItems.reduce((a, c) => a + c.precio * c.qty, 0);
+    const iva = itemPrice * 0.19;
+    const totalPago = itemPrice + iva;
+
+    const onAdd = (plato) =>{
+        const exits = cartItems.find(x => x._id === plato._id);
+        if(exits){
+            setCartItems(cartItems.map(x => x._id === plato._id ? {...exits,qty: exits.qty + 1} : x
+                )
+            );
+        }else{
+            setCartItems([...cartItems, {...plato, qty: 1}]);
+        }
+    }
+
+    const onRemove = ( plato ) => {
+        const exist = cartItems.find((x) => x._id === plato._id);
+        if(exist.qty === 1){
+        setCartItems(cartItems.filter((x) => x._id !== plato._id));
+        }else{
+            setCartItems(
+                cartItems.map((x) => 
+                x._id === plato._id ? {...exist, qty: exist.qty - 1} : x
+            ));
+        }
+    };
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -53,25 +81,53 @@ export default function Menu(){
                  />
             ) : (
                 <div className="container__platillos__menu">
-                    <ListPlatillos platos={platos} count={count} setCount={setCount}/>
+                    <ListPlatillos onAdd={onAdd} platos={platos} count={count} setCount={setCount}/>
                 </div>
             )}
                 </div>
             </div>
             <>
-            <Modal title="ORDEN DE HAMBURGUESAS" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <div className="ContainerOrden" style={{
-                    width:"100%",
-                     height:"20", 
-                     }}>
-                    <div className="itemOrden"style={{display:"flex"}}>
-                        <div className="itemImagen"><img alt="ImagenItem"/></div>
-                        <div className="itemNombre" style={{marginLeft:"30px"}}>NOMBRE ITEM</div>
-                        <div className="itemPrecio" style={{marginLeft:"30px"}}>PRECIO</div>
-                    </div>
-                </div>
+            <Modal onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} title="ORDEN DE HAMBURGUESAS" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}> 
+               <div>
+                   <div>item remover</div>
+                   <div className="ContainerOrden" 
+                   style={{
+                     overflowY: "scroll",
+                     maxHeight: "300px",
+                     padding:"20px",
+                    }}>
+                        <div>
+                            {cartItems.length === 0 && <div>Carrito vacio</div>}
+                        </div>
+                  {cartItems.map((item) => (
+                      <div key={item._id}>
+                          <div>{item.nombre}</div>
+                          <div>
+                              <button onClick={()=>onAdd(item) & setCount(count+1)}>+</button>
+                              <button onClick={()=>onRemove(item) & setCount(count-1)}>-</button>
+                          </div>
+                          <div>
+                       {item.qty} x $/{item.precio}
+                          </div>
+                      </div>
+                  ))}  
+               </div>
+               {cartItems.length !== 0 && (
+                      <>
+                      <div>Valor total: $/{itemPrice.toFixed(2)}</div>
+                      <div>Iva: $/{iva.toFixed(2)}</div>
+                      <div><span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
+                      </>
+                  )}
+               </div>
             </Modal>
             </>
         </div>
     );
 }
+
+/*<div className="itemOrden"style={{display:"flex"}}>
+                        <div className="itemImagen"><img alt="ImagenItem"/></div>
+                        <div className="itemNombre" style={{marginLeft:"30px"}}>NOMBRE ITEM</div>
+                        <div className="itemPrecio" style={{marginLeft:"30px"}}>PRECIO</div>
+                    </div>*/

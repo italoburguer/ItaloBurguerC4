@@ -18,22 +18,108 @@
     width: 100%;
 }
 
-/*
-.PanelCompra{
-    box-sizing: border-box;
-    width: 21%;
-    height: 55%;
-    margin-top: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background: white;
-    border-radius: 20px;
-    border: 1px solid darkblue;
+.carritoVacio__title{
+    font-size: 16px;
+    color: #000;
     text-align: center;
-    top: 0;
-    right: 0;
-    position: fixed;
-    overflow: auto;
-    z-index: 2;
 }
-*/
+
+.cleanOrder{
+    width: 88%;
+    margin-left: 20px;
+}
+
+.cleanOrder button{
+    border: 2px solid orange;
+    width: 31px;
+    border-radius: 15px;
+    background: rgba(207, 4, 4, 0.849);
+    color: #fff;
+    margin-left: 92.9%;
+    font-size: 15px;
+}
+.cleanOrder button:hover{
+    background: darkred;
+    border: 2px solid orangered;
+}
+
+.containeritem{
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px gray;
+    background: rgb(10, 25, 41);
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    margin: 5px 0px 5px 0px;
+}
+
+.containeritem__imagen img{
+    background: #fff;
+    border-right: 3px solid rgb(3, 115, 134);
+    width: 80px;
+    height: 60px;
+    image-rendering: pixelated;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.containeritem__text{
+    display: flex;
+    width: 100%;
+    margin: auto auto;
+}
+
+.containeritem__title{
+    width: 49%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+}
+
+.containeritem__buttons{
+    width: 29%;
+    text-align: center;
+    margin: auto auto;
+}
+
+.containeritem__buttons button{
+    box-shadow: 1px 1px 1px  #b6c9d4;
+    width: 30px;
+    margin-right: 3px;
+    margin-left: 3px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: rgb(3, 115, 134);
+}
+
+.containeritem__buttons button:hover{
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: rgb(11, 68, 77);
+}
+
+.containeritem__cantidad-precio{
+    margin: auto auto;
+    width: 100px;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+.containerValor{
+
+    border-top: 3px double black;
+    border-bottom: 3px double black;
+    padding: 10px;
+    margin: 5px 35px 0px 20px;
+}
+
+.containerValorText{
+    margin-left: 10px;
+    font-size: 15px;
+    color: #000;
+}

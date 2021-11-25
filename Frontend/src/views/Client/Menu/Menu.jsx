@@ -4,6 +4,8 @@ import ListPlatillos from "../../../components/client/appPlatillos/appListPlatil
 import { getPlatoApi } from "../../../api/plato";
 import {notification, Spin, Modal} from "antd";
 import HeaderClient from "../../../components/client/appHeader/appHeader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import "./menu.css";
 
@@ -87,37 +89,51 @@ export default function Menu(){
                 </div>
             </div>
             <>
-            <Modal onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} title="ORDEN DE HAMBURGUESAS" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}> 
+            <Modal onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} title="ORDEN DE HAMBURGUESAS" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} 
+            style={{top:"0",marginTop:"85px", }}> 
                <div>
-                   <div>item remover</div>
+                   <div className="cleanOrder">
+                       <button><FontAwesomeIcon style={{margin:"auto auto"}} icon={faTrash}/></button>
+                   </div>
                    <div className="ContainerOrden" 
                    style={{
                      overflowY: "scroll",
-                     maxHeight: "300px",
-                     padding:"20px",
+                     maxHeight: "275px",
+                     padding:" 5px 20px 0 20px",
                     }}>
-                        <div>
-                            {cartItems.length === 0 && <div>Carrito vacio</div>}
+                        <div className="carritoVacio">
+                            {cartItems.length === 0 && <div className="carritoVacio__title">No tienes ninguna hamburguesa agregada al carrito, presiona "Añadir al carrito" sobre cualquier hamburguesa o bedida y continua.</div>}
                         </div>
                   {cartItems.map((item) => (
-                      <div key={item._id}>
-                          <div>{item.nombre}</div>
-                          <div>
+                      <div key={item._id} className="containeritem">
+                          <div className="containeritem__imagen">
+                              <img src={item.imagen} alt="Item imagen" />
+                          </div>
+                          <div className="containeritem__text">
+                              <div className="containeritem__title">{item.nombre}</div>
+                          <div className="containeritem__buttons">
                               <button onClick={()=>onAdd(item) & setCount(count+1)}>+</button>
                               <button onClick={()=>onRemove(item) & setCount(count-1)}>-</button>
                           </div>
                           <div>
-                       {item.qty} x $/{item.precio}
+                       <div className="containeritem__cantidad-precio">
+                           {item.qty} x $/{item.precio}
+                       </div>
+                          </div>
                           </div>
                       </div>
                   ))}  
                </div>
                {cartItems.length !== 0 && (
-                      <>
-                      <div>Valor total: $/{itemPrice.toFixed(2)}</div>
-                      <div>Iva: $/{iva.toFixed(2)}</div>
-                      <div><span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
-                      </>
+                    <>
+                      <div className="containerValor">
+                          <div className="containerValorText">
+                          <div>Valor total: $/{itemPrice.toFixed(2)}</div>
+                          <div>Iva: $/{iva.toFixed(2)}</div>
+                          <div><span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
+                          </div>
+                      </div>
+                    </>
                   )}
                </div>
             </Modal>
@@ -125,9 +141,3 @@ export default function Menu(){
         </div>
     );
 }
-
-/*<div className="itemOrden"style={{display:"flex"}}>
-                        <div className="itemImagen"><img alt="ImagenItem"/></div>
-                        <div className="itemNombre" style={{marginLeft:"30px"}}>NOMBRE ITEM</div>
-                        <div className="itemPrecio" style={{marginLeft:"30px"}}>PRECIO</div>
-                    </div>*/

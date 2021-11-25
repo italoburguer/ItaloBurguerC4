@@ -4,11 +4,16 @@
     box-sizing: border-box;
 }
 
+.err404{
+    margin-top: 100px;
+}
+
 .containerError404{
     background: #fff;
     height: 100%;
     width: 100%;
     margin-right: 100px;
+    margin-top: 80px;
 }
 
 .containerError404{

@@ -21,7 +21,7 @@ export default function InfoAdmin(){
     
     return(
         <div id="infoAdmin">
-            <span id="spnInf">ADMIN:</span> {dataAdminName} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="spnInf">EMAIL: </span> {dataAminEmail}
+            <span id="spnInf">ADMIN:</span> {dataAdminName}<span id="spnInf" style={{marginLeft:"50px"}}>EMAIL: </span> {dataAminEmail}
         </div>
     );
     

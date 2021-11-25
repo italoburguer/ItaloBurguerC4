@@ -60,11 +60,14 @@ export default function Menu(){
             </div>
             <>
             <Modal title="ORDEN DE HAMBURGUESAS" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <div className="ContainerOrden" style={{width:"100%", height:"20", background:"red"}}>
+                <div className="ContainerOrden" style={{
+                    width:"100%",
+                     height:"20", 
+                     }}>
                     <div className="itemOrden"style={{display:"flex"}}>
                         <div className="itemImagen"><img alt="ImagenItem"/></div>
-                        <div className="itemNombre">NOMBRE ITEM</div>
-                        <div className="itemPrecio">PRECIO</div>
+                        <div className="itemNombre" style={{marginLeft:"30px"}}>NOMBRE ITEM</div>
+                        <div className="itemPrecio" style={{marginLeft:"30px"}}>PRECIO</div>
                     </div>
                 </div>
             </Modal>

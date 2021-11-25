@@ -16,9 +16,6 @@ export default function Error404(){
 
                     <p>Intenta con un enlace válido</p>
                     <button type="button"> 
-                    <Link to={"/"}>
-                    Home
-                    </Link>
                     </button>
                     </div>
                 </div>

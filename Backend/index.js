@@ -5,10 +5,10 @@ const { API_VERSION, IP_SERVER, PORT_DB } = require("./config");
 const cors = require("cors");
 
 //mongoose.set("useFindAndModify", false);
-
+//mongodb+srv://root:toor@cluster0.1ae14.mongodb.net/cluster0?retryWrites=true&w=majority`
 //`mongodb://${IP_SERVER}:${PORT_DB}/italoBurguer`
 
-mongoose.connect(`mongodb+srv://root:toor@cluster0.1ae14.mongodb.net/cluster0?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb://${IP_SERVER}:${PORT_DB}/italoBurguer`,
 {useNewUrlParser: true, useUnifiedTopology: true }, 
 (err, res) => {
     if(err){

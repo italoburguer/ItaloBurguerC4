@@ -61,7 +61,7 @@ function Plato(props){
                         </div>
                         <div className="precioProduct">
                             <div>COP $/ {plato.precio}</div>
-                            <div className="buttonBuyItem"><button onClick={()=>setCount(count+1) & onAdd(plato)}><FontAwesomeIcon icon={faCartPlus} /> &nbsp;Añadir al carrito</button></div>
+                            <div className="buttonBuyItem"><button onClick={()=>setCount(count+1) & onAdd(plato) & console.clear()}><FontAwesomeIcon icon={faCartPlus} /> &nbsp;Añadir al carrito</button></div>
                          </div>
                     </div>
                 </div>

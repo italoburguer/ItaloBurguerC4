@@ -30,16 +30,16 @@
 }
 
 .cleanOrder button{
-    border: 2px solid orange;
+    border: 2px solid rgb(255, 0, 34);
     width: 31px;
     border-radius: 15px;
-    background: rgba(207, 4, 4, 0.849);
-    color: #fff;
+    color: red;
     margin-left: 92.9%;
     font-size: 15px;
 }
 .cleanOrder button:hover{
     background: darkred;
+    color: #fff;
     border: 2px solid orangered;
 }
 

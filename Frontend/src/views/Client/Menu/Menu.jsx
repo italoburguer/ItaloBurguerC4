@@ -93,7 +93,7 @@ export default function Menu(){
             style={{top:"0",marginTop:"85px", }}> 
                <div>
                    <div className="cleanOrder">
-                       <button><FontAwesomeIcon style={{margin:"auto auto"}} icon={faTrash}/></button>
+                       {cartItems.length !== 0 && <button onClick={()=> console.log("click")}><FontAwesomeIcon style={{margin:"auto auto"}} icon={faTrash}/></button>}
                    </div>
                    <div className="ContainerOrden" 
                    style={{
@@ -121,6 +121,9 @@ export default function Menu(){
                        </div>
                           </div>
                           </div>
+                          {console.log("_______"+count+" Items en el carrito_______")}
+                          {console.log(item.qty+": "+item.nombre+"_____-> $"+item.precio)}
+                          {console.log("========================================")}
                       </div>
                   ))}  
                </div>

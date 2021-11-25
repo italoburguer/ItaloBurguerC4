@@ -3,7 +3,7 @@ const Carrito = require("../models/carrito");
 function createCarrito(req, res){
     const body = req.body;
     const carrito = new Carrito(body);
-    carrito.order = 1000;
+    
  
     carrito.save((err, carritoStored) => {
         if(err){

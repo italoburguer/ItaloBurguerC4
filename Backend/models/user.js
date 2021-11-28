@@ -6,11 +6,8 @@ const UserSchema = Schema({
     apellido: {type: String},
     email:{type: String, unique:true},
     password: {type: String},
-    pedido: [
-        {
-            idPlato: {type: Schema.ObjectId, ref:'Plato', autopopulate: true}
-        }
-    ]
+    telefono: {type: String},
+    direccion: {type: String}
 });
 
 

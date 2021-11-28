@@ -2,17 +2,17 @@ const moongose = require("mongoose");
 const Schema = moongose.Schema;
 
 const CarritoSchame = Schema({
-  nombreUsuario:{type: String},
-  direccionUsuario:{},
-  fecha: {type: Date},
+  fecha: {type: Date, default:Date.now},
   productos:[
     {
-      nombrePlato: {type:String},
-      precioPlato: {type:Number},
-      cantidadPlato: {type:Number}
+      plato: {type: Schema.ObjectId, ref: 'Plato'},
+      nombrePlato: {type: String},
+      cantidadPlato: {type: Number},
+      precioPlato: {type: Number},
     }
   ],
-  totalPagar: {type: Number}
+  totalPagar: {type: Number},
+  user: {type: String}
 });
 
 module.exports = moongose.model("Carrito", CarritoSchame);

@@ -1,0 +1,99 @@
+.containerLoginUser{
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../assets/img/jpg/imgLogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+}
+
+.containerForm{
+    height: 100%;
+}
+
+.ant-tabs-nav-wrap{
+    background: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+}
+
+.ant-tabs-tab{
+    width: 100px;
+    margin: 0 50px;
+    background: white;
+    align-items: center;
+}
+
+
+.formLoginUser{
+    background-color: #fff;
+    color: #fff;
+    width: 350px;
+    height: auto;
+    margin: auto auto;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px  #b6c9d4;
+}
+
+.formLoginUser form{
+    color: #000;
+    width: 270px;
+    margin: auto auto;
+    margin-top: 20px;
+}
+
+.formLoginUser .formLogin label{
+    font-size: 22px;
+    margin: 0 auto 20px auto;
+    width: 100%;
+    text-align: center;
+    color: rgb(10, 25, 41);
+}
+
+.formLoginUser .formLogin input{
+    padding: 8px;
+    width: 250px;
+    border: none;
+    background: rgb(235, 232, 232);
+    border-radius: 10px;
+}
+
+.inputsLabelStyle .labelFormLoginUser label{
+    margin: 10px 0px 5px 0px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    color: black;
+}
+
+.inputsLoginUser{
+    margin: auto auto;
+    display: flex;
+}
+
+.inputsLoginUser .inputsIcon{
+    margin: auto auto;
+}
+
+.buttonLoginUser{
+    width: 172px;
+    margin: 40px auto 50px auto;
+}
+
+.buttonLoginUser button{
+    color: #000;
+    border: 1px solid #37bd64;
+    background: transparent;
+    width: 170px;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.buttonLoginUser button:hover{
+    background: green;
+    color: white;
+}

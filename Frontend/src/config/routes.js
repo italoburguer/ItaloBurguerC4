@@ -11,6 +11,7 @@ import Home from "../views/Client/Home";
 import LoginUser from "../views/Client/Login/SignIn"
 import Menu from "../views/Client/Menu/Menu";
 import SignUp from "../views/Client/Register/SignUp";
+import Pedidos from "../views/Client/Pedidos/Pedidos"
 
 const routes = [
     {
@@ -60,6 +61,11 @@ const routes = [
             {
                 path: "/menu",
                 component: Menu,
+                exact: true
+            },
+            {
+                path: "/misPedidos",
+                component: Pedidos,
                 exact: true
             },
             {

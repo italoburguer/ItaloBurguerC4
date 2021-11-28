@@ -16,12 +16,32 @@ export default function appHeader(props){
     
     if(ruta === "/menu"){
         active = "active";
-    }if(ruta === "/pedidos"){
+    }if(ruta === "/misPedidos"){
         active2 = "active"
     }if(ruta === "/login"){
         active3 = "active"
     }
 
+    function ShowCarrito(){
+      if(ruta==="/menu"){
+       return(
+           <li className="iconCart"
+              style={{
+                  borderRadius:"5px", 
+                  padding:"5px", 
+                  background:"rgb(10, 25, 41)",
+                  color:"#fff",
+                  cursor:"pointer"
+              }}
+              onClick={showModal}>
+              <FontAwesomeIcon icon={faShoppingCart}/> <span style={{color:"#87CEEB", borderRadius:"5px", top:"0"}}>{count}</span></li>
+       ) 
+      }else{
+        return(
+          <div></div>
+        )
+      }
+    }
     return(
         <div className="div__fixed__header">
             <nav class="navbar-default">
@@ -36,22 +56,13 @@ export default function appHeader(props){
 			  <ul class="nav navbar-nav navbar-right">
 				<li><a href="/">Home</a></li>
 				<li className={active} ><a href="/menu">MENU</a></li>
-				<li className={active2} ><a href="/pedidos">MIS PEDIDOS</a></li>
+				<li className={active2} ><a href="/misPedidos">MIS PEDIDOS</a></li>
 				<li className={active3} ><a href="/login">INICIAR SESIÓN</a></li>
-        <li className="iconCart"
-              style={{
-                  borderRadius:"5px", 
-                  padding:"5px", 
-                  background:"rgb(10, 25, 41)",
-                  color:"#fff",
-                  cursor:"pointer"
-              }}
-              onClick={showModal}>
-              <FontAwesomeIcon icon={faShoppingCart}/> <span style={{color:"#87CEEB", borderRadius:"5px", top:"0"}}>{count}</span></li>
+        <ShowCarrito />
 			  </ul>
 			</div>
 		  </div>
 	    </nav>
         </div>
     );
-}
+  }

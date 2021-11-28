@@ -4,10 +4,12 @@ const User = require("../models/user");
 function registro(req, res){
     const user = new User();
 
-    const {nombre, apellido, email, password, pass2} = req.body;
+    const {nombre, apellido, email, password, pass2, telefono, direccion} = req.body;
     user.nombre = nombre;
     user.apellido = apellido;
-    user.email = email;
+    user.email = email.toLowerCase();
+    user.telefono = telefono;
+    user.direccion = direccion;
 
     if(!password || !pass2){
         res.status(404).send({
@@ -49,6 +51,11 @@ function registro(req, res){
     }
 }
 
+function inicioSesion(req, res){
+    console.log("ok")
+}
+
 module.exports = {
     registro,
+    inicioSesion,
 }

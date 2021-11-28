@@ -14,7 +14,7 @@ export default function Menu(){
     const [ count, setCount ] = useState(0);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-    
+
     const itemPrice = cartItems.reduce((a, c) => a + c.precio * c.qty, 0);
     const iva = itemPrice * 0.19;
     const totalPago = itemPrice + iva;
@@ -31,6 +31,7 @@ export default function Menu(){
     }
 
     const onRemove = ( plato ) => {
+        
         const exist = cartItems.find((x) => x._id === plato._id);
         if(exist.qty === 1){
         setCartItems(cartItems.filter((x) => x._id !== plato._id));
@@ -70,7 +71,6 @@ export default function Menu(){
         });
     }, []);
 
-
     return(
         <div className="Menu__food__container">
           <HeaderClient count={count} showModal={showModal}/>  
@@ -91,6 +91,7 @@ export default function Menu(){
             <>
             <Modal onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} title="ORDEN DE HAMBURGUESAS" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} 
             style={{top:"0",marginTop:"85px", }}> 
+             
                <div>
                    <div className="cleanOrder">
                        {cartItems.length !== 0 && <button onClick={()=> console.log("click")}><FontAwesomeIcon style={{margin:"auto auto"}} icon={faTrash}/></button>}
@@ -105,12 +106,13 @@ export default function Menu(){
                             {cartItems.length === 0 && <div className="carritoVacio__title">No tienes ninguna hamburguesa agregada al carrito, presiona "Añadir al carrito" sobre cualquier hamburguesa o bedida y continua.</div>}
                         </div>
                   {cartItems.map((item) => (
-                      <div key={item._id} className="containeritem">
+                      <div key={item._id} style={{marginTop:"2px"}} className="containeritem">
                           <div className="containeritem__imagen">
                               <img src={item.imagen} alt="Item imagen" />
                           </div>
                           <div className="containeritem__text">
                               <div className="containeritem__title">{item.nombre}</div>
+           
                           <div className="containeritem__buttons">
                               <button onClick={()=>onAdd(item) & setCount(count+1)}>+</button>
                               <button onClick={()=>onRemove(item) & setCount(count-1)}>-</button>
@@ -121,9 +123,10 @@ export default function Menu(){
                        </div>
                           </div>
                           </div>
-                          {console.log("_______"+count+" Items en el carrito_______")}
+                          {console.log("_______"+count+" Items en el carrito______")}
                           {console.log(item.qty+": "+item.nombre+"_____-> $"+item.precio)}
-                          {console.log("========================================")}
+                          {console.log("=====================================")}
+                          {console.log("ID: "+item._id, "\nNombre: "+item.nombre, "\nPrecio: "+item.precio, "\nCantidad: "+item.qty)}
                       </div>
                   ))}  
                </div>
@@ -133,7 +136,8 @@ export default function Menu(){
                           <div className="containerValorText">
                           <div>Valor total: $/{itemPrice.toFixed(2)}</div>
                           <div>Iva: $/{iva.toFixed(2)}</div>
-                          <div><span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
+                          <div>
+                          <span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
                           </div>
                       </div>
                     </>

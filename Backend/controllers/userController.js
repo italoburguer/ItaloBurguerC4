@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt-nodejs");
 const User = require("../models/user");
+const jwtUser = require("../services/jwtUser");
 
 function registro(req, res){
     const user = new User();
@@ -52,7 +53,40 @@ function registro(req, res){
 }
 
 function inicioSesion(req, res){
-    console.log("ok")
+    const params = req.body;
+    const email = params.email; 
+    const password = params.password;
+
+    User.findOne({email}, (err, usuarioStored) =>{
+        if(err){
+            res.status(500).send({
+                message: "Server Error."
+            });
+        }else{
+            if(!usuarioStored){
+                res.status(404).send({
+                    message: "Este correo no ha sido registrado"
+                });
+            }else{
+                bcrypt.compare(password, usuarioStored.password, (err, check) => {
+                    if(err){
+                        res.status(500).send({
+                            message: "Server error."
+                        });
+                    }else if(!check){
+                        res.status(404).send({
+                            message: "La contraseña es incorrecta."
+                        })
+                    }else{
+                        res.status(200).send({
+                            accessTokenUser: jwtUser.createAccesTokenUser(usuarioStored),
+                            refreshTokenUser: jwtUser.createRefreshTokenUser(usuarioStored)
+                        });
+                    }
+                });
+            }
+        }
+    });
 }
 
 module.exports = {

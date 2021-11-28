@@ -3,12 +3,25 @@ import React, {useState} from "react";
 import { Redirect } from "react-router";
 import AppHeader from "../../../components/client/appHeader/appHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { signUpApi } from "../../../api/user";
+import { signUpApi, signInApi } from "../../../api/user";
 import { faEnvelope, faLock, faSignInAlt, faUserAlt, faPhone, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
+import { ACCESS_TOKEN_USER, REFRESH_TOKEN_USER} from "../../../utils/constantsUser"
 
 import "./sigIn.css";
 
 export default function SignIn(){
+
+    const [inputsLogin, setInputsLogin] = useState({
+      email: "",
+      password: ""
+    });
+
+    const changeFormLogin = e =>{
+      setInputsLogin({
+        ...inputsLogin,
+        [e.target.name] : e.target.value
+      });
+    }
 
     const [inputs, setInputs] = useState({
         nombre: "",
@@ -18,8 +31,8 @@ export default function SignIn(){
         pass2: "",
         telefono: "",
         direccion: ""
-      });
-      const [formValid, setFormValid] = useState({
+    });
+    const [formValid, setFormValid] = useState({
         nombre: false,
         apellido:false,
         email: false,
@@ -27,16 +40,16 @@ export default function SignIn(){
         pass2: false,
         telefono: false,
         direccion: false,
-      });
+    });
     
-      const changeForm = e => {
+    const changeForm = e => {
           setInputs({
             ...inputs,
             [e.target.name]: e.target.value
           });
-        }
-    
-      const register = async e => {
+    }
+
+    const register = async e => {
         e.preventDefault();
         const nombreVal = inputs.nombre;
         const apellidoVal = inputs.apellido;
@@ -69,9 +82,9 @@ export default function SignIn(){
             }
           }
         }
-      };
+    };
     
-      const resetForm = () => {
+    const resetForm = () => {
         const inputs = document.getElementsByTagName("input");
     
         for (let i = 0; i < inputs.length; i++) {
@@ -98,8 +111,28 @@ export default function SignIn(){
           telefono: false,
           direccion: false,
         });
-      };
+    };
     
+    const login = async e => { 
+      e.preventDefault();
+      const result = await signInApi(inputsLogin);
+
+      if(result.message){
+        notification["error"]({
+          message: result.message
+        });
+      } else{
+        const {accessTokenUser, refreshTokenUser} = result;
+        localStorage.setItem(ACCESS_TOKEN_USER, accessTokenUser);
+        localStorage.setItem(REFRESH_TOKEN_USER, refreshTokenUser);
+
+        notification["success"]({
+          message: "Inicio de sesión exitoso"
+        });
+        window.location.href = "/misPedidos"
+      }
+      }
+
 
     return(
         <div>
@@ -110,7 +143,7 @@ export default function SignIn(){
                     <Tabs>
                         <Tabs.TabPane tab={<span>Entrar</span>} key="1">
                             <div className="formLogin">
-                              <form>
+                              <form onChange={changeFormLogin} onSubmit={login}>
                                 <label>INICIA SESIÓN</label>
                                 <div className="inputsLabelStyle">
                                     <div className="labelFormLoginUser">
@@ -121,7 +154,7 @@ export default function SignIn(){
                                         <FontAwesomeIcon icon={faEnvelope} />
                                         </div>
                                         <div>
-                                        <input type="text" />
+                                        <input type="email" name="email"/>
                                         </div>
                                     </div>
                                 </div>
@@ -134,12 +167,12 @@ export default function SignIn(){
                                         <FontAwesomeIcon icon={faLock} />
                                         </div>
                                         <div>
-                                        <input type="password" />
+                                        <input type="password" name="password" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="buttonLoginUser">
-                                    <button className>Iniciar Sesion &nbsp;&nbsp;<FontAwesomeIcon icon={faSignInAlt}/></button>
+                                    <button type="submit">Iniciar Sesion &nbsp;&nbsp;<FontAwesomeIcon icon={faSignInAlt}/></button>
                                 </div>
                               </form>
                             </div>

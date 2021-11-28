@@ -7,7 +7,7 @@ function signUp(req, res){
 
     const { nombre, email, password, repeatPassword } = req.body;
     admin.nombre = nombre;
-    admin.email = email;
+    admin.email = email.toLowerCase();
 
     if(!password || !repeatPassword){
         res.status(404).send({

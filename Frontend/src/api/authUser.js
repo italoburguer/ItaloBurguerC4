@@ -2,7 +2,7 @@ import { basePath, apiVersion } from "./config";
 import { ACCESS_TOKEN_USER, REFRESH_TOKEN_USER } from "../utils/constantsUser";
 import jwtDecode from "jwt-decode";
 
-export function getAccessTokenUser(){
+export function getAccessTokenUserApi(){
     const accessTokenUser = localStorage.getItem(ACCESS_TOKEN_USER);
 
     if(!accessTokenUser || accessTokenUser === "null"){
@@ -13,7 +13,7 @@ export function getAccessTokenUser(){
     
 }
 
-export function getRefreshTokenUser(){
+export function getRefreshTokenUserApi(){
     const refreshTokenUser = localStorage.getItem(REFRESH_TOKEN_USER);
 
     if(!refreshTokenUser || refreshTokenUser === "null"){

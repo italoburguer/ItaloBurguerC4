@@ -71,6 +71,8 @@ export default function Menu(){
         });
     }, []);
 
+    let s=""; 
+
     return(
         <div className="Menu__food__container">
           <HeaderClient count={count} showModal={showModal}/>  
@@ -123,10 +125,8 @@ export default function Menu(){
                        </div>
                           </div>
                           </div>
-                          {console.log("_______"+count+" Items en el carrito______")}
-                          {console.log(item.qty+": "+item.nombre+"_____-> $"+item.precio)}
-                          {console.log("=====================================")}
-                          {console.log("ID: "+item._id, "\nNombre: "+item.nombre, "\nPrecio: "+item.precio, "\nCantidad: "+item.qty)}
+                         {console.log(item.nombre+" :" +item.qty)}
+                         {s=item}
                       </div>
                   ))}  
                </div>

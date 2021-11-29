@@ -8,7 +8,7 @@ function registro(req, res){
     const {nombre, apellido, email, password, pass2, telefono, direccion} = req.body;
     user.nombre = nombre;
     user.apellido = apellido;
-    user.email = email.toLowerCase();
+    user.email = email;
     user.telefono = telefono;
     user.direccion = direccion;
 

@@ -7,7 +7,7 @@ function signUp(req, res){
 
     const { nombre, email, password, repeatPassword } = req.body;
     admin.nombre = nombre;
-    admin.email = email.toLowerCase();
+    admin.email = email;
 
     if(!password || !repeatPassword){
         res.status(404).send({
@@ -51,7 +51,7 @@ function signUp(req, res){
 
 function login(req, res){
     const params = req.body;
-    const email = params.email.toLowerCase();
+    const email = params.email;
     const password = params.password;
 
     Admin.findOne({email}, (err, adminStored)=>{

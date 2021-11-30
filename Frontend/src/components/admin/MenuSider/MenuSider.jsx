@@ -19,12 +19,6 @@ export default function MenuSider(){
                 </Link>
             </Menu.Item>
             <Menu.Item key="2">
-                <Link to={"/admin/pedidos"}>
-                <FontAwesomeIcon icon={faTruckMoving} />&nbsp;&nbsp;
-                <span className="nav-text">Pedidos</span>
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="3">
                 <Link to={"/admin/menu-restaurant"}>
                 <FontAwesomeIcon icon={faUtensils} />&nbsp;&nbsp;&nbsp; 
                 <span className="nav-text">Menú restaurante</span>

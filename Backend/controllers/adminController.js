@@ -5,16 +5,16 @@ const jwt = require("../services/jwt");
 function signUp(req, res){
     const admin = new Admin();
 
-    const { nombre, email, password, repeatPassword } = req.body;
-    admin.nombre = nombre;
+    const { usuario, email, password, pass2 } = req.body;
+    admin.usuario = usuario;
     admin.email = email;
 
-    if(!password || !repeatPassword){
+    if(!password || !pass2){
         res.status(404).send({
             message: "Rellene los campos.",
         });   
     }else{
-        if(password !== repeatPassword){
+        if(password !== pass2){
             res.status(404).send({
                 message: "Las contraseñas deben ser iguales",
             });

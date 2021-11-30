@@ -5,14 +5,12 @@ import LayoutClient from "../layouts/LayoutClient";
 import AdminHome from "../views/Admin";
 import AdminSignIn from "../views/Admin/Login/SignIn";
 import MenuFood from "../views/Admin/MenuFood/MenuFood";
-import Error404 from "../views/Error404";
+import Error404Amin from "../views/Error404";
 //VIEWS CLIENT
 import Home from "../views/Client/Home";
 import LoginUser from "../views/Client/Login/SignIn"
 import Menu from "../views/Client/Menu/Menu";
-import SignUp from "../views/Client/Register/SignUp";
-import Pedidos from "../views/Client/Pedidos/Pedidos"
-
+import Error404 from "../views/Error404";
 const routes = [
     {
         path: "/admin", 
@@ -34,7 +32,7 @@ const routes = [
                 exact: true
             },
             {
-                component: Error404,
+                component: Error404Amin,
             }
         ]
     },
@@ -54,18 +52,8 @@ const routes = [
                 exact: true
             },
             {
-                path: "/signup",
-                component: SignUp,
-                exact: true
-            },
-            {
                 path: "/menu",
                 component: Menu,
-                exact: true
-            },
-            {
-                path: "/misPedidos",
-                component: Pedidos,
                 exact: true
             },
             {

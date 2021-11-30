@@ -62,7 +62,6 @@ export default function Home(){
 						  <ul class="nav navbar-nav navbar-right">
 						  <li class="active"><a href="/">Home</a></li>
 						  <li><a href="/menu">MENU</a></li>
-						  <li><a href="/misPedidos">MIS PEDIDOS</a></li>
 						  <ChangeButtonLoginLogout />
 							
 						  </ul>

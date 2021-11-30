@@ -279,7 +279,7 @@ export default function SignIn(){
                                     <button type="submit">Registrarse &nbsp;&nbsp;<FontAwesomeIcon icon={faSignInAlt}/></button>
                                 </div>
                               </form>
-                            </div>
+                        </div>
                         </Tabs.TabPane>
                     </Tabs>
                 </div>

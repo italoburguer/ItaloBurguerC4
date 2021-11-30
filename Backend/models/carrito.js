@@ -3,7 +3,7 @@ const Schema = moongose.Schema;
 
 const CarritoSchame = Schema({
   fecha: {type: Date, default:Date.now},
-  totalPagar: {type: String},
+  totalPagar: {type: String,},
   user: {type: String}
 });
 

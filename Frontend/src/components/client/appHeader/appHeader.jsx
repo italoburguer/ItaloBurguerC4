@@ -92,7 +92,6 @@ export default function appHeader(props){
 			  <ul class="nav navbar-nav navbar-right">
 				<li><a href="/">HOME</a></li>
 				<li className={active} ><a href="/menu">MENU</a></li>
-				<li className={active2} ><a href="/misPedidos">MIS PEDIDOS</a></li>
 				<ChangeButtonLoginLogout />
         <ShowCarrito />
 			  </ul>

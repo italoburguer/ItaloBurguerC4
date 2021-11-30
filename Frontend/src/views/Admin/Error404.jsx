@@ -2,12 +2,9 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import "./Error404.css"
 import e404 from "../assets/img/png/404.png";
-import AppHeader from "../components/client/appHeader/appHeader";
 export default function Error404(){
     return(
-            <div>
-                <AppHeader />
-                <section id="err404">
+            <section id="err404">
                 <div className="containerError404">
                 <div className="errorText">
                     Page
@@ -28,6 +25,5 @@ export default function Error404(){
                 </div>
             </div>
             </section>
-            </div>
     )
 }

@@ -162,13 +162,6 @@ export default function Menu(){
                           <div>
                           <span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
                           </div>
-                         <form onSubmit={addCarrito}>
-                             <input type="text" 
-                             name="totalPagar"
-                             value={totalPago}
-                             onFocus={e => setCartData({totalPagar: e.target.defaultValue})} />
-                             <button type="submit" onClick={test()}>OK</button>
-                         </form>
                       </div>
                     </>
                   )}

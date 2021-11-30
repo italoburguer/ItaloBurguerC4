@@ -14,8 +14,6 @@ export default function AppHeader(){
         window.location.reload();
     };
 
-    console.log("");
-
     return(
         <div className="menu-top">
             <div className="menu-top__left">

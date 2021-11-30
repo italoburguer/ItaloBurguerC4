@@ -2,14 +2,14 @@ import React from "react";
 import AppHeader from "../../../components/client/appHeader/appHeader";
 import { Redirect, Route } from "react-router";
 import SignIn from "../../Admin/Login/SignIn";
-
-
+import useAuthUser from "../../../hooks/useAuthUser";
 
 export default function Pedidos(){
 
-    const user = null;
+    const {user, isLoading} = useAuthUser();
 
-    if(!user){
+    
+    if(!user && !isLoading){
         return(
             <>
             <Route path="/login" component={SignIn}/>
@@ -18,12 +18,18 @@ export default function Pedidos(){
         )
     }
 
+    if(user && !isLoading){
     return(
         <div>
             <AppHeader />
-            <h1 style={{textAlign:"center"}}>
-                ESTAMOS EN TUS PEDIDOS
-            </h1>
+            <div style={{marginTop: "100px"}}>
+                <div>
+
+                </div>
+            </div>
         </div>
     )
+    }
+
+    return null;
 }

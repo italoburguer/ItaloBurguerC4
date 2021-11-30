@@ -1,8 +1,44 @@
 import React from "react";
-import { faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { faHamburger, faEnvelope, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getAccessTokenUserApi, logoutUser } from "../../api/authUser";
+import jwtDecode from "jwt-decode";
 
 export default function Home(){
+
+	const logout = () =>{
+		logoutUser();
+		window.location.reload();
+	  }
+
+	function ChangeButtonLoginLogout(){
+		if(getAccessTokenUserApi()){
+		  return <li className="logoutButtonUser" onClick={logout}><a ><div className="textLogout">CERRAR SESION</div></a></li>
+		}else{
+		  return <li><a href="/login">INICIAR SESIÓN</a></li>
+		}
+	  }
+
+	  function InfoUser(){
+		if(getAccessTokenUserApi()){
+		  const data = jwtDecode(getAccessTokenUserApi());
+  
+		  const nameUser = Object.values({
+			"": data.nombre
+		  })
+		  const lastNameUser = Object.values({
+			"": data.apellido
+		  })
+		  const emailUser = Object.values({
+			"": data.email
+		  })
+  
+		  return <div style={{color: "rgb(10, 25, 41)", marginLeft:"57px",position:"fixed"}}><FontAwesomeIcon icon={faUserAlt}/> {nameUser}&nbsp;{lastNameUser}&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faEnvelope} /> {emailUser}</div>
+		}else{
+		  return <div></div>
+		}
+	  }
+
     return(
        <div>
            <div class='preloader'><div class='loaded'>&nbsp;</div></div>
@@ -12,6 +48,7 @@ export default function Home(){
 				<div class="row">
 					<div class="nave_menu">
 					<nav class="navbar navbar-default">
+						<InfoUser />
 					  <div class="container-fluid">
 						<div class="navbar-header">
 						<div className="logoHeader">
@@ -25,8 +62,8 @@ export default function Home(){
 						  <ul class="nav navbar-nav navbar-right">
 						  <li class="active"><a href="/">Home</a></li>
 						  <li><a href="/menu">MENU</a></li>
-						  <li><a href="/pedidos">MIS PEDIDOS</a></li>
-						  <li><a href="/login">INICIAR SESIÓN</a></li>
+						  <li><a href="/misPedidos">MIS PEDIDOS</a></li>
+						  <ChangeButtonLoginLogout />
 							
 						  </ul>
 						</div>

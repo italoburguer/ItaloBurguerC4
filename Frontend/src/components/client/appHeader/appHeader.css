@@ -17,3 +17,17 @@
     font-size: 35px;
     letter-spacing: 4px;
 }
+
+.logoutButtonUser{
+    margin-right: 3px;
+}
+
+.logoutButtonUser:hover{
+    color: white !important;
+    font-weight: 400;
+    background: darkred;
+}
+
+.textLogout:hover{
+    color: white;
+}

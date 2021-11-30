@@ -1,14 +1,15 @@
 import { basePath, apiVersion } from "./config";
 
-export async function addCarritoApi(data){
+export async function addCarritoApi(token, carrito){
     const url = `${basePath}/${apiVersion}/add-carrito`;
 
     const params = {
         method: "POST",
         headers: {
             "Content-type": "application/json",
+            Authorization: token
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(carrito)
     };
 
     try {

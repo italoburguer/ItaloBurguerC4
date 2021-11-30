@@ -27,7 +27,7 @@ export default function MenuSider(){
             <Menu.Item key="3">
                 <Link to={"/admin/menu-restaurant"}>
                 <FontAwesomeIcon icon={faUtensils} />&nbsp;&nbsp;&nbsp; 
-                <span className="nav-text">Menu restaurant</span>
+                <span className="nav-text">Menú restaurante</span>
                 </Link>
             </Menu.Item>
         </Menu>

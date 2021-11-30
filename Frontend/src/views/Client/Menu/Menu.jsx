@@ -8,12 +8,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import "./menu.css";
+import { getAccessTokenUserApi } from "../../../api/authUser";
+import { addCarritoApi } from "../../../api/carrito";
 
 export default function Menu(){
     const [ platos, setPlatos ] = useState(null);
     const [ count, setCount ] = useState(0);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [cartItems, setCartItems] = useState([]);
+    
+    const [cartData, setCartData] = useState();
+
+    const addCarrito = e =>{
+        e.preventDefault();      
+        const accessTokenUser = getAccessTokenUserApi();
+
+        addCarritoApi(accessTokenUser,cartData).then(response => {
+            const typeNotification = response.code === 200 ? "success" : "warning";
+            notification[typeNotification]({
+                message: response.message
+            });
+            setCartData({}); 
+        }).catch(()=>{
+            notification["error"]({
+                message: "Error Mensaje"
+            });
+        });
+    }
+
 
     const itemPrice = cartItems.reduce((a, c) => a + c.precio * c.qty, 0);
     const iva = itemPrice * 0.19;
@@ -71,7 +93,9 @@ export default function Menu(){
         });
     }, []);
 
-    let s=""; 
+    function test(){
+        return("")
+    }
 
     return(
         <div className="Menu__food__container">
@@ -125,8 +149,7 @@ export default function Menu(){
                        </div>
                           </div>
                           </div>
-                         {console.log(item.nombre+" :" +item.qty)}
-                         {s=item}
+                          
                       </div>
                   ))}  
                </div>
@@ -139,6 +162,13 @@ export default function Menu(){
                           <div>
                           <span style={{fontWeight:"bold"}}>Total a pagar: $/{totalPago.toFixed(2)}</span></div>
                           </div>
+                         <form onSubmit={addCarrito}>
+                             <input type="text" 
+                             name="totalPagar"
+                             value={totalPago}
+                             onFocus={e => setCartData({totalPagar: e.target.defaultValue})} />
+                             <button type="submit" onClick={test()}>OK</button>
+                         </form>
                       </div>
                     </>
                   )}

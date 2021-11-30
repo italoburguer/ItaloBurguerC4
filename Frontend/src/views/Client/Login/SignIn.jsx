@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signUpApi, signInApi } from "../../../api/user";
 import { faEnvelope, faLock, faSignInAlt, faUserAlt, faPhone, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import { ACCESS_TOKEN_USER, REFRESH_TOKEN_USER} from "../../../utils/constantsUser"
+import { getAccessTokenUserApi } from "../../../api/authUser";
 
 import "./sigIn.css";
 
@@ -129,11 +130,13 @@ export default function SignIn(){
         notification["success"]({
           message: "Inicio de sesión exitoso"
         });
-        window.location.href = "/misPedidos"
+        window.location.href = "/menu"
       }
       }
 
-
+      if(getAccessTokenUserApi()){
+        return <Redirect to="/menu" />
+      }
     return(
         <div>
             <AppHeader />

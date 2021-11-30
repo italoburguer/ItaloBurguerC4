@@ -2,12 +2,14 @@ import React from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import routes from "./config/routes";
 import AuthProviderAdmin from "./provider/AuthProviderAdmin";
+import AuthProviderUser from "./provider/AuthProviderUser";
 
 function App() {
 
   return (
   <div>
    <AuthProviderAdmin>
+      <AuthProviderUser>
       <Router>
         <Switch>
         {routes.map((route, index) => (
@@ -15,6 +17,7 @@ function App() {
         ))}
         </Switch>
       </Router>
+      </AuthProviderUser>
    </AuthProviderAdmin>
   </div>
   );

@@ -298,6 +298,7 @@ a:hover{
 
 .banner{
 	background:url(../images/bannerbg.jpg) no-repeat;
+	height: 720px;
 	position:relative;
 	background-size:cover;
 }

@@ -82,7 +82,7 @@ export default function Home(){
 				<div class="main_banner_area text-center">
 					<div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7">
 						<div class="single_banner_text wow zoomIn" data-wow-duration="1s">
-							<p>Veggies es bonus vobis, proinde vos postulo essum.</p>
+							<p style={{color: "rgba(255, 255, 255, 0.7)"}}>Disfruta de las mejores hamburguesas!!</p>
 							
 							<div class="separetor"></div>
 						</div>
@@ -90,7 +90,7 @@ export default function Home(){
 					
 					
 					<div class="scrolldown">
-						<a href="#special" class="scroll_btn"></a>
+						<a class="scroll_btn"></a>
 					</div>
 				</div>
 				
@@ -106,174 +106,28 @@ export default function Home(){
 					<div class="col-md-4">
 						<div class="sinle_features wow slideInUp" data-wow-duration="1s">
 							<img src="images/icon1.png" alt="" />
-							<h5>Turnip greens</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat. </p>
+							<h5>Servicio de calidad</h5>
+							<p>El mejor servicio al cliente que puedas tener, entregas rapidas!! </p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="sinle_features wow slideInUp" data-wow-duration="1.5s">
 							<img src="images/icon1.png" alt="" />
-							<h5>Turnip greens</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat. </p>
+							<h5>Calidad de ingredientes</h5>
+							<p>Los ingredientes mas frescos los encontraras aqui, para que disfrutes de tu hamburguesa lo mejor posible. </p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="sinle_features wow slideInUp" data-wow-duration="2s">
 							<img src="images/icon1.png" alt="" />
-							<h5>Turnip greens</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat. </p>
+							<h5>Super precios</h5>
+							<p>Tenemos buenos precios y super promociones. </p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>	
-	
-	<section id="special" class="special sections">
-		<div class="container">
-			<div class="row">
-				<div class="head_title text-center wow slideInLeft" data-wow-duration="1.5s">
-					<h2>This month specials</h2>
-					<div class="separetor"></div>
-				</div>
-				<div class="main_special text-center wow slideInUp" data-wow-duration="3s">
-					
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/s1.png" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p2.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p3.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p4.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p5.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p6.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p6.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p5.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p4.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p3.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/p2.jpg" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-					<div class="col-md-2 col-sm-3 col-xs-6 single_special">
-						<div class="single_special_img">
-							<img src="images/s1.png" alt="" />
-							<div class="single_special_overlay text-center">
-								<h3>Greens fava</h3>
-								<div class="overlay_separetor"></div>
-								<p>Lorem ipsum dolor sit Pellentesque vel enim a</p>
-								<p>17$</p>
-							</div>							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	
 	<section id="abouts" class="abouts sections">
 		<div class="container">
@@ -282,11 +136,11 @@ export default function Home(){
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="single_abouts wow slideInLeft" data-wow-duration="2s">
 							<div class="head_title text-center">
-								<h2>About us</h2>
+								<h2>Sobre nosotros</h2>
 								<div class="separetor"></div>
 							</div>
 							
-							<p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+							<p>Somos un restaurante donde nuestra prioridad es la satisfación al cliente, ofrecemos productos de buena calidad y a un precio accesible. </p>
 							<div class="signature_img text-right">
 								<img src="images/signature.png" alt="" />
 							</div>

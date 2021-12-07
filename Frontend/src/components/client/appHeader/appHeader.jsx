@@ -88,12 +88,12 @@ export default function appHeader(props){
                 ITALO BURGUER<FontAwesomeIcon icon={faHamburger}></FontAwesomeIcon>
                 </div>
 			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div className="container-nav-item-item">
 			  <ul class="nav navbar-nav navbar-right">
 				<li><a href="/">HOME</a></li>
 				<li className={active} ><a href="/menu">MENU</a></li>
 				<ChangeButtonLoginLogout />
-        <ShowCarrito />
+        <li><ShowCarrito /></li>
 			  </ul>
 			</div>
 		  </div>

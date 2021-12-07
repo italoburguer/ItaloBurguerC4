@@ -31,3 +31,61 @@
 .textLogout:hover{
     color: white;
 }
+
+
+@media screen and (max-width: 768px){
+    .logoHeader{
+        font-size: 30px;
+        margin: 0 0 0 5px;
+        text-align: center;
+    } 
+    
+    .iconCart{
+        display: flex;
+    }
+
+    .container-nav-item-item ul{
+        background: #fff;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        margin: auto auto;
+        padding-left: 10px;
+    }
+
+    .container-nav-item-item ul li{
+        margin: 0 0px 0 10px;
+    }
+
+    @media  screen and (max-width: 320px) {
+        .container-nav-item-item ul li{
+            margin: 0 0px 0 10px;
+            padding-left: 2px;
+            font-size: 14px;
+        }
+        .introPlatillos{
+            margin-top: 140px !important;
+        }
+    }
+
+    @media  screen and (min-width:321px)  and (max-width: 375px) {
+        .introPlatillos{
+            margin-top: 120px !important;
+        }
+    }
+
+    @media  screen and (min-width:376px) and (max-width: 425px) {
+        .introPlatillos{
+            margin-top: 110px !important;
+        }
+
+        .introPlatillos span{
+            font-size: 22px;
+        }
+
+        .container-nav-item-item ul li{
+            margin: 0 10px 0 10px;
+        }
+    }
+}
+

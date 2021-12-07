@@ -41,7 +41,8 @@ function registro(req, res){
                                 });
                             }else{
                                 res.status(200).send({
-                                    user: usuarioStored
+                                    user: usuarioStored,
+                                    message: user
                                 })
                             }
                         }

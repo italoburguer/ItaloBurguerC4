@@ -264,8 +264,8 @@ a:hover{
 	margin-top:0px;
 }
 .main_menu_bg .navbar-default {
-    background-color: transparent; 
-    border-color: transparent; 
+    background-color: #fff; 
+    border-color: #fff; 
 	transition:.6s;
 }
 .container-fluid {

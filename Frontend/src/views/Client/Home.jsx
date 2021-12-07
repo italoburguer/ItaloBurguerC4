@@ -39,6 +39,8 @@ export default function Home(){
 		}
 	  }
 
+
+	  
     return(
        <div>
            <div class='preloader'><div class='loaded'>&nbsp;</div></div>
@@ -56,16 +58,13 @@ export default function Home(){
                			 </div>
 						  
 						</div>
-
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						  
-						  <ul class="nav navbar-nav navbar-right">
-						  <li class="active"><a href="/">Home</a></li>
-						  <li><a href="/menu">MENU</a></li>
-						  <ChangeButtonLoginLogout />
-							
-						  </ul>
-						</div>
+						<div className="container-nav-item-item">
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="/">HOME</a></li>
+				<li><a href="/menu">MENU</a></li>
+				<ChangeButtonLoginLogout />
+			  </ul>
+			</div>
 					  </div>
 					</nav>
 					</div>	

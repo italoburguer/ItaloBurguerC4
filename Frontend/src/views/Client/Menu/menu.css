@@ -123,3 +123,21 @@
     font-size: 15px;
     color: #000;
 }
+
+@media screen and (max-width: 375px) {
+    .introduccionPlatillos{
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+   .introduccionPlatillos{
+       margin-left: 60px;
+   }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px){
+    .introduccionPlatillos{
+        margin-left: 50px;
+    }
+}

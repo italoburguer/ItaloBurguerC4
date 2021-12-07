@@ -10,7 +10,7 @@ export default function ListPlatillos(props){
     const {count, setCount, onAdd} = props;
     const {platos, } = props;
     return(
-        <div className="platos-list">
+        <div className="platos-list-menu">
             {platos.map(plato =>(
                 <div key={plato._id} className="platos-list__render">
                     <Plato  onAdd={onAdd} plato={plato} count={count} setCount={setCount}/>

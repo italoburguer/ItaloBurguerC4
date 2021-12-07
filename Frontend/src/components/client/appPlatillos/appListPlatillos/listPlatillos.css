@@ -52,7 +52,6 @@
     font-size: 20px;
     font-weight: 400;
     padding-left: 30px;
-    
 }
 
 .descriptionPlatillo{
@@ -91,4 +90,137 @@
     background: green;
     border: 1px solid gainsboro;
     color: white;
+}
+
+@media screen and (max-width: 375px) {
+    .productItemAlign{
+        width: 200px;
+        padding: 0;
+        display: table;
+        margin: auto 15px 25px 15px;
+    }
+    
+    .productItemAlign img{
+        width: 250px;
+        height: 200px;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .infoPlato{
+        height: 200px;
+        width: 250px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .titleProduct{
+        padding-top: 10px;
+    }
+
+    .precioProduct{
+        margin-top: 20px;
+        padding: 0;
+        margin-left: 13px;
+    }
+
+    .buttonBuyItem{
+        margin: 0 0 0 0;
+    }
+    @media screen and (min-width: 321px) {
+       .productItemAlign{
+           margin-left: 40px;
+       }
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+    .productItemAlign{
+        width: 300px;
+        padding: 0;
+        display: table;
+        margin: auto 15px 25px 15px;
+    }
+    
+    .productItemAlign img{
+        width: 100%;
+        height: 200px;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .infoPlato{
+        height: 200px;
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .titleProduct{
+        padding-top: 10px;
+    }
+
+    .precioProduct{
+        margin-top: 20px;
+        padding: 0;
+        margin-left: 13px;
+    }
+
+    .buttonBuyItem{
+        margin: 0 0 0 0;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px){
+    .productItemAlign{
+        width: 275px;
+        display: grid;
+        margin: 0 30px 240px;
+    }
+    .productItemAlign img{
+        width: 100%;
+        height: 200px;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .infoPlato{
+        height: 200px;
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .titleProduct{
+        padding-top: 10px;
+    }
+
+    .precioProduct{
+        margin-top: 20px;
+        padding: 0;
+        margin-left: 13px;
+    }
+
+    .buttonBuyItem{
+        margin: 0 0 0 0;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .productItemAlign{
+        width: 400px;
+        margin: 20px 20px;
+    }
+
+    .buttonBuyItem{
+        margin: 0 20px 0 0;
+    }
+    
 }
